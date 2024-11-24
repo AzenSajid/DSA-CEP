@@ -11,15 +11,12 @@ detect the the least recentlu used cache (right before the tail node)
 Reason to use a doubly linked list instead of a singly linked list is the direct access to the node
 and deletion done in O(1) time
 
-I imported time from the library to calculate the time of the cache and length of the capacity with
-O function to get the space complexity
+I imported time(perf_counter) from the library to calculate the time of the cache
 
 The current_size method returns the current number of items in the cache at any point in time. It helps
 you understand how many items are currently stored in the cache.
 
-The space_complexity method provides a theoretical understanding of how much space the cache could
-potentially use based on its maximum capacity.
-
+miss_rate method calculates and returns the cache miss rate in the form of the percentage
 """
 
 
@@ -124,12 +121,12 @@ class LRUCache:
 
 
 # Example Usage
-if __name__ == "__main__":
-    cache = LRUCache(3)
-    cache.put(1, 1)  # Insert 1
-    cache.put(2, 2)  # Insert 2
-    print(cache.get(1))  # Access 1 (Hit)
-    cache.put(3, 3)  # Insert 3
-    cache.put(4, 4)  # Insert 4 (Evicts 2)
-    print(cache.get(2))  # Access 2 (Miss)
-    print(cache.miss_rate())  # Print miss rate
+# if __name__ == "__main__":
+#     cache = LRUCache(3)
+#     cache.put(1, 1)  # Insert 1
+#     cache.put(2, 2)  # Insert 2
+#     print(cache.get(1))  # Access 1 (Hit)
+#     cache.put(3, 3)  # Insert 3
+#     cache.put(4, 4)  # Insert 4 (Evicts 2)
+#     print(cache.get(2))  # Access 2 (Miss)
+#     print(cache.miss_rate())  # Print miss rate
